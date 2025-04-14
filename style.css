@@ -13,14 +13,12 @@ body{
     left: 50%;
     top: 52%;
     transform: translate(-50% , -50%);
-    background: red;
     text-align: center;
 }
 .main-box .content{
     position: relative;
     height: 100%;
     width: 100%;
-    background-color: gray;
 }
 .content .box{
     position: absolute;
@@ -70,11 +68,84 @@ body{
     padding: 10px;
     left: 0;
     bottom: 130px;
+    transition: all 0.4s ease;
 }
-
+#check:checked ~ .image-box{
+    bottom: 80px;
+}
+.content .image-box::before{
+    position: absolute;
+    content: '';
+    height: 30px;
+    width: 30px;
+    background: #fff;
+    left: 50%;
+    bottom: -12px;
+    transform: translate(-50%) rotate(45deg);
+    z-index: -1;
+}
 .content .image-box img{
     height: 100%;
     width: 100%;
     object-fit: cover;
     border-radius: 25px;
 }
+.image-box .about{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.35);
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    border-radius: 25px;
+    opacity: 0;
+}
+#check:checked ~ .image-box .about{
+    opacity: 1;
+}
+ .about .details{
+  position: absolute;
+  width: 100%;
+  left: 0; 
+  bottom: 35px;
+ }
+.details .name,
+.details .job{
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+}
+.details .job{
+    margin-top: 4px;
+}
+.details .name{
+    font-size: 22px;
+}
+.details .icons img{
+    width: 19px;
+    margin-bottom: -4px;
+}
+.details .icons a{
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    margin: 14px 2.5px;
+    transition: all 0.3s ease;
+}
+.details .icons {
+    margin-top: 15px;
+}
+
+
+/* 
+.image-box .details .icons a {
+    background-color: #fff;
+    height: 50px;
+    width: 50px;
+}
+.image-box .details .icons a img{
+    width: 25px;
+    height: 25px;
+} */
