@@ -14,6 +14,7 @@ body{
     top: 52%;
     transform: translate(-50% , -50%);
     background: red;
+    text-align: center;
 }
 .main-box .content{
     position: relative;
@@ -30,6 +31,35 @@ body{
     bottom: 0;
     border-radius: 25px;
     cursor: pointer;
+}
+.content .box .share , .cancel{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    line-height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2980b9;
+    background: #fff;
+    letter-spacing: 1px;
+    border-radius: 25px;
+    opacity: 1;
+    transition: all 0.3s ease;
+
+}
+.content .box .share{
+    opacity: 1;
+}
+#check{
+    display: none;
+}
+#check:checked ~ .box .cancel{
+    opacity: 0;
+}
+#check:checked ~ .box .share{
+    opacity: 1;
 }
 .content .image-box{
     position: absolute;
